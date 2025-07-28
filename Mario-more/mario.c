@@ -1,6 +1,6 @@
 
 #include <stdio.h>
-
+#include <cs50.h>
 void print_row(int spaces, int bricks);
 
 int main(void)
@@ -9,9 +9,9 @@ int main(void)
     int n;
     do
     {
-        get_int("Height:");
+        n = get_int("Height:");
     }
-    while (n < 1 && n > 8); // prompts them only for 1 - 8 int inputs.
+    while (n < 1 || n > 8); // prompts them only for 1 - 8 int inputs.
 
     // Print a pyramid of that height (e.g user input 5)
     for (int i = 0; i < n; i++) // i becomes 1 after 1st iteration.

@@ -6,7 +6,7 @@ void print_row(int bricks);
 int main(void)
 {
     // Prompt the user for the pyramid's height
-    int n; 
+    int n;
     do
     {
         n = get_int("Height: ");
@@ -17,13 +17,15 @@ int main(void)
     for (int i = 0; i < n; i++)
     {
         // Print row of bricks
-        print_row(i + 1);
+        print_row(i + 1);// i becomes 1, i becomes 2,
+    }
     }
 }
 
 void print_row(int bricks)
 {
-    for (int i = 0; i < bricks; i++)
+    for (int i = 0; i < bricks; i++) // bricks = 1 but i remains 0, brickes becomes 2 but i remains 0.
+{
     {
         printf("#");
     }

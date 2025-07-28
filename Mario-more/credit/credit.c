@@ -18,11 +18,11 @@ int main() {
     int sum1 = 0, sum2 = 0;
     temp = card;
     while (temp > 0) {
-        sum1 += temp % 10; // check if total's last digit is 0
+        sum1 += temp % 10; // Add the last digit (not doubled) to sum1
         temp /= 10;
         int digit = temp % 10;
-        digit *= 2; // multiply each digit by 2
-        sum2 += digit / 10 + digit % 10;
+        digit *= 2; // multiply every other digit by 2
+        sum2 += digit / 10 + digit % 10; // Add the digits of the product (e.g., 12 → 1 + 2)
         temp /= 10;
     }
     int total = sum1 + sum2;

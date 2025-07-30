@@ -1,0 +1,8 @@
+sort1 uses: Bubble sort
+How do you know?: sort1 takes much longer on reversed/random inputs (~0.2s) but is significantly faster on sorted input (~0.05s), indicating early-exit optimization typical of bubble sort.
+
+sort2 uses: Merge sort
+How do you know?: sort2 is consistently fast across all input types (around 0.05–0.07s), matching merge sort’s O(n log n) behavior that’s insensitive to input order.
+
+sort3 uses: Selection sort
+How do you know?: sort3 has nearly the same runtime (~0.11–0.13s) regardless of input order, a clear indicator of selection sort’s fixed O(n²) performance.

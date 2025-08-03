@@ -80,7 +80,7 @@ ON airports.id = (
     ON passengers.flight_id = flights.id
     WHERE flights.year = 2021
     AND flights.month = 7 AND flights.day = 29
-    AND people.name = "Your thief name here"
+    AND people.name = "Bruce"
 );
 
 

@@ -1,3 +1,3 @@
-The THIEF is: Brance
-The city the thief ESCAPED TO: New York City
-The ACCOMPLICE is: Robin
+Brance
+New York City
+Robin

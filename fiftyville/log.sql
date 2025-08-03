@@ -1,5 +1,9 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
-
+-- Step 1: Find the thief by cross-referencing
+--   - People who exited bakery between 10:15–10:25
+--   - People who made a short phone call (< 60s) that day
+--   - People who withdrew money from Leggett Street ATM
+--   - People who took the earliest flight the next morning (8:20 AM, July 29)
 -- The Thief:
 SELECT people.name
 FROM people
@@ -63,6 +67,7 @@ AND people.id IN (
 
 
 -- The Destination
+-- Step 2: Find the destination city of that 8:20 AM flight
 SELECT DISTINCT airports.city
 FROM flights
 JOIN airports
@@ -80,6 +85,9 @@ ON airports.id = (
 
 
 -- The Accomplace:
+
+-- Step 3: Find the thief's accomplice — person they called under 60s
+
 SELECT people.name
 FROM people
 WHERE people.phone_number IN (
@@ -90,6 +98,6 @@ WHERE people.phone_number IN (
 	AND caller = (
 	SELECT people.phone_number
         FROM people
-        WHERE people.name = "Place your thief name here"
+        WHERE people.name = "Bruce"
     )
 );

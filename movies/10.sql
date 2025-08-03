@@ -1,6 +1,9 @@
-SELECT DISTINCT d.name FROM people AS d
-JOIN directors ON d.id = directors.person_id
-JOIN movies ON directors.movie_id = movies.id
-JOIN stars ON movies.id = stars.movie_id
-JOIN people AS kb ON stars.person_id = kb.id
-WHERE kb.name = 'Kevin Bacon';
+SELECT name FROM people
+WHERE people.id IN
+(
+    SELECT DISTINCT(people.id) FROM people
+    JOIN directors ON directors.person_id = people.id
+    JOIN movies ON movies.id = directors.movie_id
+    JOIN ratings ON ratings.movie_id = movies.id
+    WHERE rating >= 9.0
+);

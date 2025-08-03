@@ -1,6 +1,5 @@
-SELECT DISTINCT d.name FROM people AS d
-JOIN directors ON d.id = directors.person_id
-JOIN movies ON directors.movie_id = movies.id
-JOIN stars ON movies.id = stars.movie_id
-JOIN people AS t ON stars.person_id = t.id
-WHERE t.name = 'Tom Hanks';
+SELECT name FROM people
+JOIN stars ON stars.person_id = people.id
+JOIN movies ON stars.movie_id = movies.id
+WHERE movies.year = 2004
+ORDER BY people.birth

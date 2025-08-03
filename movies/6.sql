@@ -1,5 +1,3 @@
-SELECT title FROM movies
-JOIN stars ON movies.id = stars.movie_id
-JOIN people ON stars.person_id = people.id
-WHERE people.name = 'Kevin Bacon'
-ORDER BY title;
+SELECT AVG(rating) FROM ratings
+JOIN movies ON ratings.movie_id = movies.id
+WHERE year = 2012;

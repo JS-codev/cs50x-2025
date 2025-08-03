@@ -1,5 +1,4 @@
-SELECT DISTINCT people.name, people.birth FROM people
-JOIN stars ON people.id = stars.person_id
-JOIN movies ON stars.movie_id = movies.id
-WHERE movies.year = 2004
-ORDER BY people.name;
+SELECT movies.title, ratings.rating FROM movies
+JOIN ratings ON movies.id = ratings.movie_id
+WHERE year = 2010
+ORDER BY rating DESC, title

@@ -1,1 +1,2 @@
-SELECT name FROM people WHERE birth = 1971;
+SELECT name FROM people
+WHERE birth = 1971;

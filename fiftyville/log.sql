@@ -80,7 +80,7 @@ ON airports.id = (
     ON passengers.flight_id = flights.id
     WHERE flights.year = 2021
     AND flights.month = 7 AND flights.day = 29
-    AND people.name = "Bruce"
+    AND people.name = "Brance"
 );
 
 
@@ -98,6 +98,6 @@ WHERE people.phone_number IN (
 	AND caller = (
 	SELECT people.phone_number
         FROM people
-        WHERE people.name = "Bruce"
+        WHERE people.name = "Brance"
     )
 );

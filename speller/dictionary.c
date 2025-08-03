@@ -2,9 +2,13 @@
 
 #include <ctype.h>
 #include <stdbool.h>
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
 #include "dictionary.h"
-
+unsigned int word_count = 0;
+#define LENGTH 45
 // Represents a node in a hash table
 typedef struct node
 {
@@ -13,7 +17,7 @@ typedef struct node
 } node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
+const unsigned int N = 10000;
 
 // Hash table
 node *table[N];

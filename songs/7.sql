@@ -1,4 +1,4 @@
-SELECT AVG(s.energy) AS average_energy
-FROM songs s
-JOIN artists a ON s.artist_id = a.artist_id
-WHERE a.name = 'Drake';
+SELECT AVG(energy)
+FROM songs
+JOIN artists ON songs.artist_id = artists.id
+WHERE artists.name = 'Drake';

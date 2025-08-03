@@ -51,7 +51,45 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    return false;
+    FILE *source = fopen(dictionary, "r");
+     if (source == NULL)
+    {
+        fprintf(stderr, "Could not open %s.\n", dictionary);
+        return false;
+    }
+
+    // Temporary buffer to hold each word
+    char word[LENGTH + 1];
+
+    // Read words one at a time
+    while (fscanf(source, "%s", word) != EOF)
+    {
+        // Allocate a new node for each word
+        node *n = malloc(sizeof(node));
+        if (n == NULL)
+        {
+            fclose(source);
+            return false;
+        }
+
+        // Copy word into node
+        strcpy(n->word, word);
+
+        // Hash word to obtain index
+        int index = hash(word);
+
+        // Insert node into hash table (at beginning of linked list)
+        n->next = table[index];
+        table[index] = n;
+
+        // Update word count
+        word_count++;
+    }
+
+    // Close dictionary file
+    fclose(source);
+
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
@@ -65,5 +103,11 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    for each bucket:
+    cursor = table[i]
+    while cursor:
+        tmp = cursor
+        cursor = cursor->next
+        free(tmp)
     return false;
 }

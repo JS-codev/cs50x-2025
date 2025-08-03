@@ -102,12 +102,19 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // TODO
-    for each bucket:
-    cursor = table[i]
-    while cursor:
-        tmp = cursor
-        cursor = cursor->next
-        free(tmp)
-    return false;
+    // Iterate through each bucket in the hash table
+    for (int i = 0; i < N; i++)
+    {
+        node *cursor = table[i];
+
+        // Free the linked list at this bucket
+        while (cursor != NULL)
+        {
+            node *tmp = cursor;
+            cursor = cursor->next;
+            free(tmp);
+        }
+    }
+
+    return true;
 }

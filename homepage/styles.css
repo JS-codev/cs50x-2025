@@ -1,0 +1,5 @@
+body { font-family: Arial, sans-serif; }
+.navbar { margin-bottom: 20px; }
+.jumbotron h1 { color: darkblue; font-size: 3rem; }
+.section-intro { padding: 1rem; background-color: #f0f0f0; }
+.btn-custom { border-radius: 8px; background-color: teal; color: white; }

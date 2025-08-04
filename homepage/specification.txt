@@ -1,0 +1,4 @@
+HTML tags: header, nav, h1, p, section, article, ul, li, footer, img
+CSS properties: margin, padding, color, font-size, background-color
+JavaScript: added click alert on custom button
+Bootstrap: navbar component and jumbotron for header

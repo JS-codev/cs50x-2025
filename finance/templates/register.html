@@ -2,24 +2,19 @@
 
 {% block title %}
     Register
-{% endblock%}
+{% endblock %}
 
 {% block main %}
     <form action="/register" method="post">
-
-        <!-- class="form-group" and "btn btn-primary" for CSS styling -->
-        <div class="form-group my-2">
-            <input class="form-control" autofocus name="username" type="text" placeholder="Username">
+        <div class="mb-3">
+            <input autocomplete="username" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
         </div>
-
-        <div class="form-group my-2">
-            <input class="form-control" autofocus name="password" type="password" placeholder="Password (6 characters++)">
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
         </div>
-
-        <div class="form-group my-2">
-            <input class="form-control" autofocus name="confirmation" type="password" placeholder="Confirmed Password">
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Password (again)" type="password">
         </div>
-
         <button class="btn btn-primary" type="submit">Register</button>
     </form>
 {% endblock %}

@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/quote" method="post">
-        <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="symbol" name="symbol" placeholder="Symbol" type="text">
+    <form action="/quote" method="post" class="d-flex flex-row justify-content-center">
+        <div class="form-group">
+            <input class="form-control" autofocus name="symbol" placeholder="Symbol">
         </div>
-        <button class="btn btn-primary" type="submit">Quote</button>
+        <button class="btn btn-primary mx-3" type="submit">Check</button>
     </form>
 {% endblock %}

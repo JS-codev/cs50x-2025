@@ -1,4 +1,7 @@
-cs50
 Flask
 Flask-Session
 requests
+cachelib
+python-dotenv
+flask_sqlalchemy
+sshtunnel

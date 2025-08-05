@@ -1,5 +1,5 @@
 import os
-import sqlite3
+
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
@@ -212,25 +212,17 @@ def register():
         if password != confirmation:
             return apology("passwords don't match", 400)
 
-        # Check if username already exists
-        existing_user = db.execute("SELECT * FROM users WHERE username = ?", username)
-        if existing_user:
-            return apology("username already exists", 400)
-
-        # Insert new user with default cash
+        # Try to insert new user
         try:
-            db.execute(
-                "INSERT INTO users (username, hash, cash) VALUES (?, ?, ?)",
-                username,
-                generate_password_hash(password),
-                10000.00
-            )
-        except:
+            user_id = db.execute("""
+                INSERT INTO users (username, hash)
+                VALUES (?, ?)
+            """, username, generate_password_hash(password))
+        except ValueError:
             return apology("username already exists", 400)
 
-        # Get the newly created user and log them in
-        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
-        session["user_id"] = rows[0]["id"]
+        # Log user in
+        session["user_id"] = user_id
 
         flash("Registered!")
         return redirect("/")

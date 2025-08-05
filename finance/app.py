@@ -48,7 +48,8 @@ def index():
         quote = lookup(stock["symbol"])
         stock["name"] = quote["name"]
         stock["price"] = float(quote["price"])
-        stock["value"] = int(quote["price"] * stock["total_shares"])
+        stock["total_shares"] = int(stock["total_shares"])
+        stock["value"] = quote["price"] * stock["total_shares"]
         total_value += stock["value"]
         grand_total += stock["value"]
 

@@ -21,8 +21,8 @@
                     <td>{{ stock.symbol }}</td>
                     <td>{{ stock.name }}</td>
                     <td>{{ stock.total_shares }}</td>
-                    <td>{{ stock.price }}</td>
-                    <td>{{ stock.value }}</td>
+                    <td>{{ stock.price | usd }}</td>
+                    <td>{{ stock.value | usd }}</td>
                 </tr>
             {% endfor %}
         </tbody>
@@ -33,7 +33,7 @@
             </tr>
             <tr>
                 <td colspan="4"><strong>Total Value</strong></td>
-                <td><strong>{{ total_value }}</strong></td>
+                <td><strong>{{ total_value | usd }}</strong></td>
             </tr>
         </tfoot>
     </table>
